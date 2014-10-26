@@ -49,9 +49,9 @@
 
 cc.game.onStart = function(){
     cc.view.adjustViewPort(true);
-    cc.view.setDesignResolutionSize(480, 452, cc.ResolutionPolicy.SHOW_ALL);
+    cc.view.setDesignResolutionSize(480, 852, cc.ResolutionPolicy.FIXED_WIDTH);
     cc.view.resizeWithBrowserSize(true);
-    cc.view.setContentTranslateLeftTop(0, 0);
+    //cc.view.setContentTranslateLeftTop(0, 0);
     //load resources
     cc.LoaderScene.preload(g_resources, function () {
         cc.director.runScene(new HelloWorldScene());
