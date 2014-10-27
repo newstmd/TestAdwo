@@ -48,8 +48,15 @@
  */
 
 cc.game.onStart = function(){
-    cc.view.adjustViewPort(true);
-    cc.view.setDesignResolutionSize(480, 852, cc.ResolutionPolicy.FIXED_WIDTH);
+	
+	cc.view.adjustViewPort(true); 
+	cc.view.enableAutoFullScreen(false); 
+	var mode = cc.sys.isMobile && window.navigator.userAgent.indexOf("MicroMessenger") != -1 ? cc.ResolutionPolicy.FIXED_HEIGHT : cc.sys.isMobile ? cc.ResolutionPolicy.FIXED_WIDTH : cc.ResolutionPolicy.SHOW_ALL; 
+	cc.view.setDesignResolutionSize(528, 831, mode); 
+
+	
+    //cc.view.adjustViewPort(true);
+    //cc.view.setDesignResolutionSize(528, 831, cc.ResolutionPolicy.FIXED_WIDTH);
     cc.view.resizeWithBrowserSize(true);
     //cc.view.setContentTranslateLeftTop(0, 0);
     //load resources

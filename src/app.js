@@ -20,6 +20,13 @@ var HelloWorldLayer = cc.Layer.extend({
         });
         this.addChild(bgSprite);
         
+        var sizeLable = cc.LabelTTF.create();
+        sizeLable.setString(size.width+"+"+size.height);
+        sizeLable.attr({
+        	x:size.width/2,
+        	y:size.height/2
+        });
+        this.addChild(sizeLable);
         return true;
     }
 });
